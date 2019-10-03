@@ -1,0 +1,13 @@
+{{>header}}
+
+{{message}}
+
+<div id="app">
+	<h2><%message%></h2>
+	<input v-model="message">
+	<button v-on:click="message='Nouvelle valeur'">set Value</button>
+	<button @click="increment()">Increment</button>
+</div>
+
+{{>footer}}
+{{{vue}}}
