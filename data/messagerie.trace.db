@@ -42,3 +42,11 @@ INSERT INTO "PUBLIC"."ORGANIZATION"("ID","ALIASES","DOMAIN","NAME")VALUES(?,?,?,
 org.h2.jdbc.JdbcSQLDataException: Erreur lors de la conversion de données "'' (ORGANIZATION: ""ID"" INTEGER NOT NULL)"
 Data conversion error converting "'' (ORGANIZATION: ""ID"" INTEGER NOT NULL)"; SQL statement:
 INSERT INTO "PUBLIC"."ORGANIZATION"("ID","ALIASES","DOMAIN","NAME")VALUES(?,?,?,?) -- (?1, ?2, ?3, ?4) [22018-199]
+2019-10-07 11:20:11 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Erreur lors de la conversion de données "'' (GROUPE: ""ID"" INTEGER NOT NULL)"
+Data conversion error converting "'' (GROUPE: ""ID"" INTEGER NOT NULL)"; SQL statement:
+INSERT INTO "PUBLIC"."GROUPE"("ID","ALIASES","EMAIL","NAME","ORGANIZATION_ID")VALUES(?,?,?,?,?) -- (?1, ?2, ?3, ?4, ?5) [22018-199]
+2019-10-07 11:20:11 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Erreur lors de la conversion de données "'' (GROUPE: ""ID"" INTEGER NOT NULL)"
+Data conversion error converting "'' (GROUPE: ""ID"" INTEGER NOT NULL)"; SQL statement:
+INSERT INTO "PUBLIC"."GROUPE"("ID","ALIASES","EMAIL","NAME","ORGANIZATION_ID")VALUES(?,?,?,?,?) -- (?1, ?2, ?3, ?4, ?5) [22018-199]

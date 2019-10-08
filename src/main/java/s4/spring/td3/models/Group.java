@@ -11,6 +11,8 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 @Entity
 @Table(name = "Groupe")
 public class Group {
@@ -21,6 +23,7 @@ public class Group {
 	private String email;
 	private String aliases;
 	@ManyToOne
+	@JsonIgnore
 	private Organization organization;
 	@ManyToMany
 	@JoinTable(name = "user_group")
