@@ -1,8 +1,10 @@
 {{>header}}
 <v-btn color="" @click="loadGroupes">Groupes</v-btn>
 <ul>
-  <li v-for="item in items" :key="item.id">
+  <li v-for="(item, index) in items" :key="item.id">
     <% item %>
+    <v-btn @click="updateOrga(item,index)" small>...</v-btn>
+    <v-btn @click="deleteOrga(item,index)" small>x</v-btn>
   </li>
 </ul>
 {{>frmOrga}}

@@ -42,7 +42,14 @@ public class TestController {
 		vue.addMethod("addOrga", "let self=this;"+Http.post("/rest/orgas/create", "this.orga", "self.dialog=false;"
 				+ "self.message='Organisation ajoutée';"
 				+ "self.snackbar=true;"
-				+ "self.items.push(self.orga);self.orga={};"));
+				+ "self.items.push(response.data);self.orga={};"));
+
+		vue.addMethod("updateOrga", "let self=this;self.dialog=true;self.orga=orga","orga");
+		
+		vue.addMethod("deleteOrga", 
+				"let self=this;let $='';"+Http.delete("'/rest/orgas/'+item.id+$","self.message=response.data;"
+						+ "self.snackbar=true;"
+						+ "self.items.splice(index,1);"),"item","index");
 		model.put("vue", vue);
 		return "spa";
 	}
