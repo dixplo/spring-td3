@@ -34,8 +34,23 @@ public class TestController {
 		List<Organization> organizations=repo.findAll();
 		vue.addData("items",organizations);
 		vue.addData("dialog",false);
+		vue.addData("snackbar",false);
+		vue.addData("message");
+		vue.addDataRaw("orga","{name:'Le Nom',domain:''}");
 		vue.addMethod("loadGroupes", "let self=this;"+Http.get("/rest/groups", "self.items=response.data"));
+		
+		vue.addMethod("addOrga", "let self=this;"+Http.post("/rest/orgas/create", "this.orga", "self.dialog=false;"
+				+ "self.message='Organisation ajoutée';"
+				+ "self.snackbar=true;"
+				+ "self.items.push(self.orga);self.orga={};"));
 		model.put("vue", vue);
 		return "spa";
 	}
 }
+
+
+
+
+
+
+
